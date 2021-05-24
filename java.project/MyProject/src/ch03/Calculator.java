@@ -33,12 +33,12 @@ public class Calculator {
 		cal.pieR(5.5);
 		cal.pieRR(5.5);	
 		
-		System.out.print("1. 덧셈\n2. 뺄셈\n3. 곱셈\n4. 나눗셈\n5. 원의 둘레\n6. 원의둘레\n선택하시오 > ");
-		
 		int num1;
 		int num2;
 		double num3;
 		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("1. 덧셈\n2. 뺄셈\n3. 곱셈\n4. 나눗셈\n5. 원의 둘레\n6. 원의둘레\n선택하시오 > ");
 		int menu = sc.nextInt();
 		switch (menu) {
 		case 1:
@@ -70,12 +70,12 @@ public class Calculator {
 			cal.division(num1, num2);
 			break;
 		case 5:
-			System.out.print("값을 입력하세요 > ");
+			System.out.print("반지름 값을 입력하세요 > ");
 			num3 = sc.nextDouble();
 			cal.pieR(num3);
 			break;
 		case 6:
-			System.out.print("첫번째 값을 입력하세요 > ");
+			System.out.print("반지름 값을 입력하세요 > ");
 			num3 = sc.nextDouble();
 			cal.pieRR(num3);	
 			break;
