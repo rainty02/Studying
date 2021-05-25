@@ -30,7 +30,7 @@ public class Member {
 		Member mem = new Member();
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("태어난 년도을 입력해주세요  > ");
+		System.out.print("태어난 연도을 입력해주세요  > ");
 		int birth = sc.nextInt();
 		mem.inoculation(birth);
 		mem.checkup(birth);			
