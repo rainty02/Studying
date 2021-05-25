@@ -79,6 +79,9 @@ public class Calculator {
 			num3 = sc.nextDouble();
 			cal.pieRR(num3);	
 			break;
+		default:
+			System.out.println("잘못 입력하셨습니다.");
+			break;
 		}
 	}
 }
