@@ -87,7 +87,9 @@ public class Calculator {
 				System.out.print("첫번째 값를 입력하세요 > ");
 				db1 = sc.nextDouble();
 				System.out.println(cal2.pieRR(db1));
-				break;					
+				break;	
+			default:
+				System.out.println("잘못 눌렀습니다.");
 		}
 	}
 }
