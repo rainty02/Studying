@@ -13,8 +13,7 @@ public class Person {
 		System.out.println(perTel);
 		System.out.print("주민등록번호: ");
 		System.out.println(perNo);
-	}
-	
+	}	
 	public static void main(String[] args) {
 		
 		Person per = new Person();
