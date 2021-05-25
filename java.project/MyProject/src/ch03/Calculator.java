@@ -3,85 +3,91 @@ package ch03;
 import java.util.Scanner;
 
 public class Calculator {
-	
-	void plus(int a, int b) {
-		System.out.println(a+b);
+
+	int plus(int a, int b) {
+		return a + b;
 	}
-	void subtract(int a, int b) {
-		System.out.println(a-b);
+	int subtract(int a, int b) {
+		return a - b;
 	}
-	void multiply(int a, int b) {
-		System.out.println(a*b);
+	int multiply(int a, int b) {
+		return a * b;
 	}
-	void division(double a, double b) {
-		System.out.println(a/b);
+	double division(double a, double b) {
+		return a / b;
 	}
-	void pieR(double a) {
-		System.out.println(2*Math.PI*a);
+	double pieR(double a) {
+		return 2 * Math.PI * a;
 	}
-	void pieRR(double a) {
-		System.out.println(Math.PI*a*a);
+	double pieRR(double a) {
+		return Math.PI * a * a;
 	}
 	
 	public static void main(String[] args) {
 		
-		Calculator cal = new Calculator();
-		cal.plus(10, 10);
-		cal.subtract(10, 10);
-		cal.multiply(10, 10);
-		cal.division(10, 10);
-		cal.pieR(5.5);
-		cal.pieRR(5.5);	
+//		Calculator cal = new Calculator();
+//		System.out.println(cal.plus(5, 5));
+//		System.out.println(cal.subtract(5, 5));
+//		System.out.println(cal.multiply(5, 5));
+//		System.out.println(cal.division(5, 5));
+//		System.out.println(cal.pieR(5.5));
+//		System.out.println(cal.pieRR(5.5));
 		
+		Scanner sc = new Scanner(System.in);
+		Calculator cal2 = new Calculator();
 		int num1;
 		int num2;
-		double num3;
-		Scanner sc = new Scanner(System.in);
+		double db1;
+		double db2;		
 		
-		System.out.print("1. 덧셈\n2. 뺄셈\n3. 곱셈\n4. 나눗셈\n5. 원의 둘레\n6. 원의둘레\n선택하시오 > ");
+		System.out.println("1. 덧셈");
+		System.out.println("2. 뺄셈");
+		System.out.println("3. 곱셈");
+		System.out.println("4. 나눗셈");
+		System.out.println("5. 원의 둘레");
+		System.out.println("6. 원의 넓이");
+		System.out.print("메뉴를 선택하세요 > ");
 		int menu = sc.nextInt();
+		
 		switch (menu) {
-		case 1:
-			System.out.print("첫번째 값을 입력하세요 > ");
-			num1 = sc.nextInt();
-			System.out.print("두번째 값을 입력하세요 > ");
-			num2 = sc.nextInt();
-			cal.plus(num1, num2);
-			break;
-		case 2:
-			System.out.print("첫번째 값을 입력하세요 > ");
-			num1 = sc.nextInt();
-			System.out.print("두번째 값을 입력하세요 > ");
-			num2 = sc.nextInt();
-			cal.subtract(num1, num2);
-			break;
-		case 3:
-			System.out.print("첫번째 값을 입력하세요 > ");
-			num1 = sc.nextInt();
-			System.out.print("두번째 값을 입력하세요 > ");
-			num2 = sc.nextInt();
-			cal.multiply(num1, num2);
-			break;
-		case 4:
-			System.out.print("첫번째 값을 입력하세요 > ");
-			num1 = sc.nextInt();
-			System.out.print("두번째 값을 입력하세요 > ");
-			num2 = sc.nextInt();
-			cal.division(num1, num2);
-			break;
-		case 5:
-			System.out.print("반지름 값을 입력하세요 > ");
-			num3 = sc.nextDouble();
-			cal.pieR(num3);
-			break;
-		case 6:
-			System.out.print("반지름 값을 입력하세요 > ");
-			num3 = sc.nextDouble();
-			cal.pieRR(num3);	
-			break;
-		default:
-			System.out.println("잘못 입력하셨습니다.");
-			break;
+			case 1:
+				System.out.print("첫번째 값를 입력하세요 > ");
+				num1 = sc.nextInt();
+				System.out.print("두번째 값을 입력하세요 > ");
+				num2 = sc.nextInt();
+				System.out.println(cal2.plus(num1, num2));
+				break;
+			case 2:
+				System.out.print("첫번째 값를 입력하세요 > ");
+				num1 = sc.nextInt();
+				System.out.print("두번째 값을 입력하세요 > ");
+				num2 = sc.nextInt();
+				System.out.println(cal2.subtract(num1, num2));
+				break;
+			case 3:
+				System.out.print("첫번째 값를 입력하세요 > ");
+				num1 = sc.nextInt();
+				System.out.print("두번째 값을 입력하세요 > ");
+				num2 = sc.nextInt();
+				System.out.println(cal2.multiply(num1, num2));
+				break;			
+			case 4:
+				System.out.print("첫번째 값를 입력하세요 > ");
+				db1 = sc.nextDouble();
+				System.out.print("두번째 값을 입력하세요 > ");
+				db2 = sc.nextDouble();
+				System.out.println(cal2.division(db1, db2));
+				break;
+			case 5:
+				System.out.print("첫번째 값를 입력하세요 > ");
+				db1 = sc.nextDouble();
+				System.out.println(cal2.pieR(db1));
+				break;
+			case 6:
+				System.out.print("첫번째 값를 입력하세요 > ");
+				db1 = sc.nextDouble();
+				System.out.println(cal2.pieRR(db1));
+				break;					
 		}
 	}
 }
