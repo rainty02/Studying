@@ -5,7 +5,6 @@ public class StudentMain {
 	public static void main(String[] args) {
 		
 		Student[] stu = new Student[10];
-		
 		stu[0] = new Student("1번", 95, 90, 85);
 		stu[1] = new Student("2번", 90, 80, 84);
 		stu[2] = new Student("3번", 91, 90, 80);
@@ -21,12 +20,7 @@ public class StudentMain {
 			System.out.println(stu[i].result());
 		}
 		
-		Student stu2 = new Student();
-		stu2.setStuName("Lee");
-		stu2.setKorScore(90);
-		stu2.setEngScore(90);
-		stu2.setMathScore(90);
-		
+		Student stu2 = new Student("Lee", 90, 90, 90);	
 		System.out.println(stu2.result());
 		}		
 }
