@@ -7,7 +7,7 @@ public class Female extends Person {
 //	int perNo;	
 	String job;
 	
-	public Female(String name, int perNo,String job) {
+	public Female(String name, String perNo,String job) {
 		super(name, perNo);
 		this.job = job;	
 	}		

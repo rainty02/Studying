@@ -7,7 +7,7 @@ public class Male extends Person {
 //	int perNo; 상속받았으므로 적지 않아도 됨	
 	String job;
 	
-	public Male(String name, int perNo, String job) {
+	public Male(String name, String perNo, String job) {
 		super(name, perNo);
 		this.job = job;	
 	}		
