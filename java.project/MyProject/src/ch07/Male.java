@@ -7,6 +7,8 @@ public class Male extends Person {
 //	int perNo; 상속받았으므로 적지 않아도 됨	
 	String job;
 	
+	public Male() {}
+	
 	public Male(String name, String perNo, String job) {
 		super(name, perNo);
 		this.job = job;	
@@ -18,6 +20,6 @@ public class Male extends Person {
 	//	③ Person 클래스에서 정의된 인사하는 메소드를 오버라이딩 해봅시다.
 	void introduce() {
 		super.introduce();
-		System.out.println("제 직업은  " + job +"입니다.");
+		System.out.println("제 직업은 " + job +"입니다.");
 	}
 }
