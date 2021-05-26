@@ -24,4 +24,3 @@ public class StudentMain {
 		System.out.println(stu2.result());
 		}		
 }
-
