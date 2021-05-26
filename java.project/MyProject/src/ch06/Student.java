@@ -7,6 +7,8 @@ public class Student {
 	private int engScore;
 	private int mathScore;
 		
+	Student() {}
+	
 	Student(String stuName, int korScore, int engScore, int mathScore){
 		this.stuName = stuName;
 		this.korScore = korScore;
@@ -40,18 +42,7 @@ public class Student {
 	}
 	
 	String result() {
-		int sum = korScore+engScore+mathScore;
-		return stuName + "의 총점은 " + sum + ", 평균은 " + (sum/3.0) + "입니다.";
-	}
-
-	public static void main(String[] args) {
-		
-		Student[] stu = new Student[10];
-		Student stu2 = new Student("Lee", 95, 94, 90);
-		System.out.println(stu2.result());
-		
-		for(int inx = 0; inx <= 3; inx++) {
-			System.out.println(stu[inx]);
-		}		
+		int sum = korScore + engScore + mathScore;
+		return stuName + "의 총점은 " + sum + "점, 평균은 " + (sum/3.0) + "점입니다.";
 	}
 }

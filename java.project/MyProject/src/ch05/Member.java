@@ -14,7 +14,7 @@ public class Member {
 		this.name = name;
 		this.tel = tel;
 		this.major = major;
-		this. grade = grade;
+		this.grade = grade;
 		this.email = email;
 		this.birthday = birthday;
 		this.address = address;
@@ -23,17 +23,26 @@ public class Member {
 		this.name = name;
 		this.tel = tel;
 		this.major = major;
-		this. grade = grade;
+		this.grade = grade;
 		this.email = email;
 	}	
 	void memberInfo() {
-		System.out.println("이름: " + name + "\n" +
-							"전화번호: " + tel +  "\n" +
-							"전공: " + major +  "\n" +
-							"학년: " + grade +  "\n" +
-							"이메일: " + email +  "\n" +
-							"생년월일: " + birthday +  "\n" +
-							"주소: " + address);
+		System.out.println("이름: " + name);
+		System.out.println("전화번호: " + tel);
+		System.out.println("전공: " + major);
+		System.out.println("학년: " + grade);
+		System.out.println("이메일: " + email);
+		// 분기점 추가
+		if(this.birthday != null) {
+		System.out.println("생일: " + birthday);
+		} else {
+			System.out.println("생일: 입력된 값이 없습니다.");
+		}
+		if(this.address != null) {
+		System.out.println("주소: " + address);
+		} else {
+			System.out.println("주소: 입력된 값이 없습니다.");
+		}
 	}
 
 	public static void main(String[] args) {
