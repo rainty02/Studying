@@ -22,11 +22,12 @@ public class Person {
 	}	
 	int getAge() {
 		int year = Integer.parseInt(this.perNo.substring(0,2));
-		if (year >= 0 && year <= 21 ) {
+		int now = Calendar.getInstance().get(Calendar.YEAR);
+		if (year <= now-2000 ) {
 			year += 2000;
 		} else {
 			year += 1900;
 		}
-		return Calendar.getInstance().get(Calendar.YEAR) - year - 1;		
+		return now - year - 1;		
 	}
 }
