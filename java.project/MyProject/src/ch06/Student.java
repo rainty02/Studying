@@ -41,8 +41,10 @@ public class Student {
 		this.mathScore = mathScore;
 	}
 	
-	String result() {
-		int sum = korScore + engScore + mathScore;
-		return stuName + "의 총점은 " + sum + "점, 평균은 " + (sum/3.0) + "점입니다.";
+	int getSum() {
+		return korScore + engScore + mathScore;
+	}
+	float getAvg() {
+		return (korScore + engScore + mathScore) / 3f;
 	}
 }
