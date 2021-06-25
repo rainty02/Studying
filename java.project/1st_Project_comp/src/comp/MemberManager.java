@@ -39,13 +39,13 @@ public class MemberManager {
 
 			List<Member> list = dao.getList(con);
 
-			System.out.println("■■■■■■■■■■■■■■■■■■■■■■고객 정보 리스트■■■■■■■■■■■■■■■■■■■■■■■");
-			System.out.println("멤버코드 \t 아이디 \t 비밀번호 \t 이름 \t 전화번호 \t 주소 \t 포인트");
+			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■ 고객 정보 리스트 ■■■■■■■■■■■■■■■■■■■■■■■■■■");
+			System.out.println("멤버코드\t아이디\t비밀번호\t이름\t전화번호\t\t주소\t포인트");
 			for (Member mem : list) {
-				System.out.printf("%d \t %s \t %s \t %s \t %s \t %s \t %d \n", mem.getMemcode(), mem.getId(),
+				System.out.printf("%d\t%s\t%s\t%s\t%s\t%s\t%d\n", mem.getMemcode(), mem.getId(),
 						mem.getPw(), mem.getName(), mem.getPhone(), mem.getAddress(), mem.getPoint());
 			}
-			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -60,9 +60,9 @@ public class MemberManager {
 			List<Member> list = dao.getList(con, currentId);
 
 			System.out.println("■■■■■■■■■■■■■■■■■■■■■■고객 정보 리스트■■■■■■■■■■■■■■■■■■■■■■■");
-			System.out.println("아이디 \t 비밀번호 \t 이름 \t 전화번호 \t 주소 \t 포인트");
+			System.out.println("아이디\t비밀번호\t이름\t전화번호\t\t주소\t포인트");
 			for (Member mem : list) {
-				System.out.printf("%s \t %s \t %s \t %s \t %s \t %d\n", mem.getId(), mem.getPw(), mem.getName(),
+				System.out.printf("%s\t%s\t%s\t%s\t%s\t%d\n", mem.getId(), mem.getPw(), mem.getName(),
 						mem.getPhone(), mem.getAddress(), mem.getPoint());
 			}
 			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
@@ -169,8 +169,19 @@ public class MemberManager {
 			System.out.println("회원 정보를 수정합니다.");
 			System.out.print("이름를 입력하세요 > ");
 			String cafename = sc.nextLine().trim();
-			System.out.print("비밀번호를 입력하세요 > ");
-			String password = sc.nextLine().trim();
+			
+			String password = null;
+			boolean run = true;
+			// 비밀번호 일치체크
+			while(run) {
+				System.out.print("비밀번호를 입력하세요 > ");
+				password = sc.nextLine().trim();
+				run = chkPw(password);
+			}
+			
+//			System.out.print("비밀번호를 입력하세요 > ");
+//			String password = sc.nextLine().trim();
+			
 			System.out.print("주소를 입력하세요 > ");
 			String address = sc.nextLine().trim();
 			System.out.print("전화번호를 입력하세요 > ");
@@ -224,11 +235,11 @@ public class MemberManager {
 
 			List<Member> list = dao.getAdminList(con, currentId);
 
-			System.out.println("■■■■■■■■■■■■■ 점포 정보  ■■■■■■■■■■■■■■■■");
+			System.out.println("■■■■■■■■■■■■■■■ 점포 정보  ■■■■■■■■■■■■■■■■");
 			System.out.println("주소 \t\t 전화번호");
 			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			for (Member mem : list) {
-				System.out.printf("%s \t\t\t %s", mem.getAddress(), mem.getPhone());
+				System.out.printf("%s\t\t\t%s", mem.getAddress(), mem.getPhone());
 			}
 			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
 		} catch (SQLException e) {
@@ -244,12 +255,17 @@ public class MemberManager {
 		try {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
 			System.out.println("       +------------------------+");
-			System.out.println("       |    비밀번호를 재설정 합니다.  |");
+			System.out.println("       |    비밀번호를 재설정 합니다.   |");
 			System.out.println("       +------------------------+");
 
-			System.out.print(" 새 비밀번호 > ");
-			String pw = sc.nextLine().trim();
-
+			String pw = null;
+			boolean run = true;
+			// 비밀번호 일치체크
+			while(run) {
+				System.out.print(" 새 비밀번호 > ");
+				pw = sc.nextLine().trim();
+				run = chkPw(pw);
+			}		
 
 			int result = dao.editAdminMem(con, pw , currentId);
 

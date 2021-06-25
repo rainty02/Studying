@@ -12,13 +12,12 @@ public class MemberPage {
 
 	void memberPage() {
 
+		System.out.println(login.currentId + "님 환영합니다.");
 		while (true) {
-			System.out.println(login.currentId + "님 환영합니다.");
-			System.out.println("현재 적립 포인트 " + point.readPoint(login.currentId) + "점");
 			System.out.println("1. 주문하기");
-			// 포인트 추가
-			System.out.println("2. 내 정보 확인");
-			System.out.println("3. 로그아웃");
+			System.out.println("2. 포인트 확인");
+			System.out.println("3. 내 정보 확인");
+			System.out.println("4. 로그아웃");
 			int num3 = Integer.parseInt(sc.nextLine().trim());
 
 			switch (num3) {
@@ -27,6 +26,9 @@ public class MemberPage {
 				saleManager.pay(login.currentId);
 				continue;
 			case 2:
+				System.out.println(login.currentId + "님의 적립포인트는 " + point.readPoint(login.currentId) + "점입니다.");
+				continue;
+			case 3:
 				memberManager.myInfo(login.currentId);
 				System.out.println("1. 정보수정");
 				System.out.println("2. 회원탈퇴");
@@ -42,9 +44,12 @@ public class MemberPage {
 				case 3:
 					continue;
 				}
-			case 3:
+			case 4:
 				login.logout();
 				return;
+			default:
+				System.out.println("잘못 선택하셨습니다.");
+				continue;
 			}
 		}
 	}

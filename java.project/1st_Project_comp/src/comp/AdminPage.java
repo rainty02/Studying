@@ -41,6 +41,9 @@ public class AdminPage {
 			case 5:
 				login.logout();
 				System.exit(0);
+			default:
+				System.out.println("잘못 선택하셨습니다.");
+				break;
 			}
 		}
 	}
@@ -75,6 +78,9 @@ public class AdminPage {
 				break;
 			case 5:
 				return;
+			default:
+				System.out.println("잘못 선택하셨습니다.");
+				break;
 			}
 		}
 
@@ -108,6 +114,9 @@ public class AdminPage {
 				break;
 			case 5:
 				return;
+			default:
+				System.out.println("잘못 선택하셨습니다.");
+				break;
 			}
 		}
 	}
@@ -133,8 +142,10 @@ public class AdminPage {
 				break;
 			case 3:
 				return;
+			default:
+				System.out.println("잘못 선택하셨습니다.");
+				break;
 			}
 		}
 	}
-
 }

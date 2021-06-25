@@ -140,13 +140,17 @@ public class SaleManager {
 				
 				System.out.println("판매 상품 인기 순위 리스트");
 				System.out.println("-------------------------------------");
-				System.out.println("순위 \t상품명 \t\t판매횟수 ");
+				System.out.println("순위\t상품명\t\t판매횟수 ");
 				System.out.println("-------------------------------------");
 				
 				int rank =1 ;
 				for(Sale sale : list) {
-					System.out.printf("%d  \t %s \t %d ",rank++,  sale.getSname(), sale.getCount());
-					System.out.println();
+					if(sale.getSname().length() >= 8) {
+						System.out.printf("%d\t%s\t%d\n", rank++, sale.getSname(), sale.getCount());
+					} else {
+						System.out.printf("%d\t%s\t\t%d\n", rank++, sale.getSname(), sale.getCount());
+					}
+
 				}
 				
 				System.out.println("-------------------------------------");
@@ -300,7 +304,7 @@ public class SaleManager {
 					}
 					
 					// 영수증
-					System.out.println("영수증 출력");
+					
 					System.out.println("메뉴\t\t수량 \t금액");
 					for(int i=0; i<list.size(); i++) {
 						if(list.get(i).getSname().length() >= 8) {
