@@ -41,11 +41,16 @@ public class MenuManager {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
 			List<Menu> list = dao.getList(con);
 
-			System.out.println("■■■■■■■■■■■메뉴리스트■■■■■■■■■■■");
+			
+			System.out.println();
+			System.out.println("\t           메뉴리스트");
+			System.out.println("\t***************  ");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println(list.get(i));
 			}
-			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println();
 
 		} catch (SQLException e) {
 			e.printStackTrace();

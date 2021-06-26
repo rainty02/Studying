@@ -18,12 +18,18 @@ public class MemberPage {
 
 	void memberPage() {
 
-		System.out.println(login.currentId + "님 환영합니다.");
 		while (true) {
-			System.out.println("1. 주문하기");
-			System.out.println("2. 포인트 확인");
-			System.out.println("3. 내 정보 확인");
-			System.out.println("4. 로그아웃");
+			System.out.println();
+			System.out.println(String.format("%30s님", login.currentId));
+			System.out.println("\t          회원 메뉴");
+			System.out.println("\t***************  ");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println("\t  1. 주문하기");
+			System.out.println("\t  2. 포인트 확인");
+			System.out.println("\t  3. 내 정보");
+			System.out.println("\t  4. 로그아웃");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println();
 			int num3 = Integer.parseInt(sc.nextLine().trim());
 
 			switch (num3) {
@@ -32,13 +38,23 @@ public class MemberPage {
 				saleManager.pay(login.currentId);
 				continue;
 			case 2:
-				System.out.println(login.currentId + "님의 적립포인트는 " + point.readPoint(login.currentId) + "점입니다.");
+				System.out.println();
+				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println("    " + login.currentId + "님의 적립포인트는 " + point.readPoint(login.currentId) + "점입니다.");
+				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println();
 				continue;
 			case 3:
 				memberManager.myInfo(login.currentId);
-				System.out.println("1. 정보수정");
-				System.out.println("2. 회원탈퇴");
-				System.out.println("3. 이전 메뉴");
+				System.out.println();
+				System.out.println("\t            내 정보");
+				System.out.println("\t***************  ");
+				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println("\t   1. 정보수정");
+				System.out.println("\t   2. 회원탈퇴");
+				System.out.println("\t   3. 이전 메뉴");
+				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println();
 				num3 = Integer.parseInt(sc.nextLine().trim());
 				switch (num3) {
 				case 1:

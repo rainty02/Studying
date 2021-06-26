@@ -48,13 +48,17 @@ public class MemberManager {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
 			List<Member> list = dao.getList(con);
 
-			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■ 고객 정보 리스트 ■■■■■■■■■■■■■■■■■■■■■■■■■■");
+			System.out.println();
+			System.out.println("\t\t\t        고객 정보 리스트");
+			System.out.println("\t\t\t*****************");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("멤버코드\t아이디\t비밀번호\t이름\t전화번호\t\t주소\t포인트");
 			for (Member mem : list) {
 				System.out.printf("%d\t%s\t%s\t%s\t%s\t%s\t%d\n", mem.getMemcode(), mem.getId(),
 						mem.getPw(), mem.getName(), mem.getPhone(), mem.getAddress(), mem.getPoint());
 			}
-			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -68,13 +72,17 @@ public class MemberManager {
 
 			List<Member> list = dao.getList(con, currentId);
 
-			System.out.println("■■■■■■■■■■■■■■■■■■■■■■고객 정보 리스트■■■■■■■■■■■■■■■■■■■■■■■");
+			System.out.println();
+			System.out.println("\t\t                  내 정보");
+			System.out.println("\t\t  *****************");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("아이디\t비밀번호\t이름\t전화번호\t\t주소\t포인트");
 			for (Member mem : list) {
 				System.out.printf("%s\t%s\t%s\t%s\t%s\t%d\n", mem.getId(), mem.getPw(), mem.getName(),
 						mem.getPhone(), mem.getAddress(), mem.getPoint());
 			}
-			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -121,8 +129,19 @@ public class MemberManager {
 	void memAdd() {
 		try {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
-			System.out.println("환영합니다.");
-
+			System.out.println("\t  회원가입 이용약관");		
+			System.out.println("\t***************  ");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println("\t        제1조 목적");
+			System.out.println("본 이용약관은 「스타벅스」(이하 \"회사\")와 회사의");
+			System.out.println("스타벅스 어플서비스(이하 \"서비스\")를 이용하는 자");
+			System.out.println("(이하 \"사용자\")간의 관계와 권리 의무 및 책임사항,");
+			System.out.println("기타서비스 이용에 관한 제반사항을 정함이 목적이지만");
+			System.out.println("아무도 안 읽을테니 끝까지 읽는 사람 있으면 커피 사줌");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println("\n");
+			
+			
 			// 3. 아이디 중복체크 후 아이디값 반환
 			String id = chKOverlap();
 			String password = null;
@@ -234,13 +253,16 @@ public class MemberManager {
 
 			List<Member> list = dao.getAdminList(con, currentId);
 
-			System.out.println("■■■■■■■■■■■■■■■ 점포 정보  ■■■■■■■■■■■■■■■■");
-			System.out.println("주소\t\t전화번호");
-			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println();
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println("\t            점포정보");
+			System.out.println("\t****************");
+			System.out.println("\t위치\t전화번호");
 			for (Member mem : list) {
-				System.out.printf("%s\t\t\t%s", mem.getAddress(), mem.getPhone());
+				System.out.printf("\t%s\t%s\n", mem.getAddress(), mem.getPhone());
 			}
-			System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -253,9 +275,13 @@ public class MemberManager {
 
 		try {
 			con = DriverManager.getConnection(jdbcUrl, user, pw);
-			System.out.println("       +------------------------+");
-			System.out.println("       |    비밀번호를 재설정 합니다.   |");
-			System.out.println("       +------------------------+");
+			System.out.println();
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println("\t+------------------------+");
+			System.out.println("\t|    비밀번호를 재설정 합니다          |");
+			System.out.println("\t+------------------------+");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+			System.out.println();
 		
 			// 비밀번호 일치체크
 			String pw = null;
@@ -269,11 +295,11 @@ public class MemberManager {
 			int result = dao.editAdminMem(con, pw , currentId);
 
 			if (result > 0) {
-				System.out.println("  * 정보가 수정되었습니다.");
+				System.out.println("정보가 수정되었습니다.");
 			} else {
-				System.out.println("                   ●●●");
-				System.out.println("       오류가 발생하여 수정에 실패하였습니다.");
-				System.out.println("                   ●●●");
+				System.out.println("\t●●●");
+				System.out.println("\t오류가 발생하여 수정에 실패하였습니다.");
+				System.out.println("\t●●●");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

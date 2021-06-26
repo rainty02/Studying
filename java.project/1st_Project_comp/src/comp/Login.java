@@ -62,7 +62,10 @@ public class Login {
 					logout();
 					return result;
 				}
-				System.out.println("아이디와 비밀번호를 입력합니다. (입력횟수 " + cnt +"회)");
+				System.out.println();
+				System.out.println("\t            로그인          (입력횟수 " + cnt + "회)");
+				System.out.println("\t***************  ");
+				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 				System.out.print("아이디를 입력하세요 > ");
 				currentId = sc.nextLine().trim();
 				System.out.print("비밀번호를 입력하세요 > ");

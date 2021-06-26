@@ -24,10 +24,14 @@ public class AppMain {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
 			while (true) {
-				System.out.println("로그인 화면");
-				System.out.println("1. 회원가입");
-				System.out.println("2. 로그인");
-				System.out.print("메뉴를 선택하세요 > ");
+				System.out.println();
+				System.out.println("\t           스타벅스");
+				System.out.println("\t***************  ");
+				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println("\t   1. 회원가입");
+				System.out.println("\t   2. 로그인");
+				System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
+				System.out.println();
 				int num = Integer.parseInt(sc.nextLine().trim());
 				switch (num) {
 				case 1:
