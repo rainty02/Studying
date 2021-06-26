@@ -32,8 +32,10 @@ public class AppMain {
 				switch (num) {
 				case 1:
 					memberManager.memAdd();
-				case 2:
-					login.chkLogin();
+				case 2:				
+					if (!login.chkLogin()) {
+						continue;
+					}
 					if (login.currentId.equals("admin")) {
 						adminPage.mainOpen();
 					}
