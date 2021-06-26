@@ -175,8 +175,6 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
-		System.out.println(currentId);
-
 		try {
 			// sql문
 			String sql = "select address, phone from member where id = ?";

@@ -20,20 +20,20 @@ public class SaleManager {
 
 	private SaleDao dao;
 	private MenuDao mdao;
-	Scanner scanner;
-	Point pManager;
-	Login login = new Login(MemberDao.getInstance());
-	int totalPrice;
-	int expectedPoint;
-	ArrayList<Sale> list;
+	private Scanner scanner;
+	private Point pManager;
+	private Login login = new Login(MemberDao.getInstance());
+	private int totalPrice;
+	private int expectedPoint;
+	private ArrayList<Sale> list;
 	
 	// Connection 객체 생성 
-	Connection conn = null;
+	private Connection conn = null;
 
 	// 연결
-	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-	String user = "hr";
-	String pw = "tiger";
+	private String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String user = "hr";
+	private String pw = "tiger";
 	
 	public SaleManager(SaleDao dao, MenuDao mdao){
 		// 초기화
@@ -358,7 +358,7 @@ public class SaleManager {
 					}				
 					System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 					System.out.println("\t\t총액\t"+finalPrice);
-//					System.out.println("\t\t현재 포인트\t" + pManager.readPoint(currentId));
+					System.out.println("\t\t현재 포인트\t" + pManager.readPoint(currentId));
 					System.out.println();
 	}
 

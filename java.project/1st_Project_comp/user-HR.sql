@@ -42,12 +42,13 @@ start with 1;
 -- member 값
 -- id는 a,b,c순
 -- 비밀번호는 1234 통일
-insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '김은선', 'a', '1234', '서울', '01012345678', 1000);
-insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '위세라', 'b', '1234', '서울', '01012345678', 1500);
-insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '이윤성', 'c', '1234', '서울', '01012345678', 2000);
-insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '이현우', 'd', '1234', '서울', '01012345678', 5000);
-insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '박지성', 'e', '1234', '서울', '01012345678', 9000);
-insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '이강인', 'f', '1234', '서울', '01012345678', 4000);
+insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '이관리', 'admin', 'admin', 'seoul', '01012345678', 1000);
+insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '김은선', 'eunsun', '1234', 'busan', '01012345678', 1000);
+insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '위세라', 'sera', '1234', 'boston', '01012345678', 1500);
+insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '이윤성', 'yunsung', '1234', 'paris', '01012345678', 2000);
+insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '이현우', 'hyunwoo', '1234', 'seoul', '01012345678', 5000);
+insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '박지성', 'jisung', '1234', 'busan', '01012345678', 9000);
+insert into member (memcode, name, id, pw, address, phone, point) values (member_sq.nextval, '이강인', 'gangin', '1234', 'seoul', '01012345678', 4000);
 
 -- sale 값
 insert into sale(salecode, sname, price,saledate, id, count) values (sale_sq.nextval, 'latte', 4600, '21/06/21', 'a', 2);
@@ -66,6 +67,6 @@ insert into menu(menucode, mname, price) values (menu_sq.nextval, 'sandwich', 48
 insert into menu(menucode, mname, price) values (menu_sq.nextval, 'bagel', 2300);
 insert into menu(menucode, mname, price) values (menu_sq.nextval, 'cake', 4800);
 
-drop sequence member_sq;
-drop table member;
+drop sequence sale_sq;
+drop table sale;
 commit;

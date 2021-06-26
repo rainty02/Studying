@@ -254,9 +254,9 @@ public class MemberManager {
 			List<Member> list = dao.getAdminList(con, currentId);
 
 			System.out.println();
-			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("\t            점포정보");
 			System.out.println("\t****************");
+			System.out.println("〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓");
 			System.out.println("\t위치\t전화번호");
 			for (Member mem : list) {
 				System.out.printf("\t%s\t%s\n", mem.getAddress(), mem.getPhone());
@@ -287,7 +287,7 @@ public class MemberManager {
 			String pw = null;
 			boolean run = true;
 			while(run) {
-				System.out.print(" 새 비밀번호 > ");
+				System.out.print("새 비밀번호 > ");
 				pw = sc.nextLine().trim();
 				run = chkPw(pw);
 			}		
