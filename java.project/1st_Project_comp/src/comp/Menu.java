@@ -1,6 +1,6 @@
 package comp;
 
-public class Menu {
+public class Menu {				// 메뉴 변수, 생성자 정의
 
 	private int menuCode;		// 메뉴 고유번호
 	private int rowNum;			// 행번호
@@ -39,8 +39,7 @@ public class Menu {
 	// 생성자 5 : 기본 생성자
 	public Menu() {}
 	
-
-	
+	// getter, setter
 	public String getEditName() {
 		return editName;
 	}
@@ -56,7 +55,6 @@ public class Menu {
 	public void setMenuCode(int menuCode) {
 		this.menuCode = menuCode;
 	}
-
 		
 	public int getRowNum() {
 		return rowNum;
@@ -82,6 +80,7 @@ public class Menu {
 		this.price = price;
 	}
 
+	// toString
 	@Override
 	public String toString() {
 		if(mname.length() >= 8) {

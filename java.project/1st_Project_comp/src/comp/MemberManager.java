@@ -12,17 +12,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class MemberManager {
+	
 /*
-	MemberManager 클래스 정의 (메소드기능 - Dao)
-	1. 전체 멤버리스트 출력 (관리자용) - MemberDao.getList		
-	2. 내 정보 출력 (회원용) - MemberDao.getList		
-	3. 아이디 중복체크 (회원가입시) - MemberDao.chKId			
-	4. 회원가입, 수정시 비밀번호 일치여부 
-	5. 멤버 데이터 입력(회원가입) - MemberDao.chKOverlap, MemberDao.insertMem			
-	6. 내 정보 수정 (회원용) -	MemberDao.editMem				
-	7. 회원 탈퇴 (회원용) - MemberDao.deleteMem				
-	8. 관리자 정보 조회 (관리자용) - MemberDao.getAdminList		
-	9. 관리자 비밀번호 재설정 (관리자용) - MemberDao.editAdminMem
+	MemberManager 클래스 정의 (메소드명 : 메소드기능 - 사용된 Dao)
+	
+	1. void memList() : 전체 멤버리스트 출력 (관리자용) - MemberDao.getList		
+	2. void myInfo(String currentId) : 내 정보 출력 (회원용) - MemberDao.getList		
+	3. String chKOverlap() : 아이디 중복체크 (회원가입시) - MemberDao.chKId			
+	4. boolean chkPw(String pw) : 회원가입, 수정시 비밀번호 일치여부 
+	5. void memAdd() : 멤버 데이터 입력(회원가입) - MemberDao.chKOverlap, MemberDao.insertMem			
+	6. void memEdit(String currentId) : 내 정보 수정 (회원용) -	MemberDao.editMem				
+	7. void memDel(String currentId) : 회원 탈퇴 (회원용) - MemberDao.deleteMem				
+	8. void myAdminInfo(String currentId) : 관리자 정보 조회 (관리자용) - MemberDao.getAdminList		
+	9. void memAdminEdit(String currentId) : 관리자 비밀번호 재설정 (관리자용) - MemberDao.editAdminMem
+	
 */	
 	
 	private MemberDao dao;
@@ -39,7 +42,6 @@ public class MemberManager {
 	public MemberManager(MemberDao dao) {
 		this.dao = dao;
 		sc = new Scanner(System.in);
-		//		this.currentId = currentId;
 	}
 
 	// 1. 전체 리스트 출력 (관리자용)
@@ -123,7 +125,6 @@ public class MemberManager {
 		}
 		return result;
 	}
-
 
 	// 5. 멤버 데이터 입력(회원가입)
 	void memAdd() {
