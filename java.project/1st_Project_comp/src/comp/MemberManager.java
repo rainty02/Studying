@@ -30,6 +30,7 @@ public class MemberManager {
 	
 	private MemberDao dao;
 	private Scanner sc;
+	List<Member> list;
 
 	// 객체 생성
 	private Connection con = null;

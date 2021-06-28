@@ -28,9 +28,6 @@ public class MenuManager {
 	private String user = "hr";
 	private String pw = "tiger";
 
-	public MenuManager() {
-	};
-
 	public MenuManager(MenuDao dao) {
 		this.dao = dao;
 		sc = new Scanner(System.in);
